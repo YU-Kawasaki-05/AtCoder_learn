@@ -47,10 +47,12 @@ def mysolution():
     weights = list(map(int, input().split())) # ボールの重さを整数リストとして取得
 
     if 1 <= N <= 20 and 1 <= X <= 10**6 and all(1 <= W_i <= 10**5 for W_i in weights):
+        
         # bit全探索のためのループ
         # 1 << N は 2^N を意味する（2のN乗）
         # 例えばN=3なら、1<<3 = 8（二進数で1000）
         # range(1, 1<<N)とすることで、1から2^N-1までの数（全ての部分集合、空集合を除く）を列挙
+        
         for bit in range(1, 1 << N):  # 1以上のボールを選ぶため1から開始
             total = 0  # 選んだボールの重さの合計
             
