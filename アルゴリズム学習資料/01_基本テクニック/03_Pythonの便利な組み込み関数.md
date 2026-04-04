@@ -83,6 +83,52 @@ str(123)         # '123' （数値から文字列へ変換）
 '  hello  '.strip()                       # 'hello' （前後の空白を削除）
 ```
 
+### 3.3 文字列の逆順と回文判定
+
+```python
+# 文字列の逆順変換
+s = "hello"
+s_reversed = s[::-1]  # "olleh"
+
+# 回文判定（文字列が前後から読んでも同じかどうか）
+def is_palindrome(s):
+    return s == s[::-1]
+
+is_palindrome("level")  # True
+is_palindrome("hello")  # False
+
+# 文字列から特定の文字を削除
+s = "hello world"
+s_no_spaces = s.replace(" ", "")  # "helloworld"
+
+# 文字列が特定のパターンで始まるか/終わるかの判定
+"hello".startswith("he")  # True
+"hello".endswith("lo")    # True
+
+# 文字列の検索
+"hello world".find("world")  # 6 (見つからない場合は-1)
+"hello world".index("world") # 6 (見つからない場合はValueError)
+
+# 文字列の含有判定
+"world" in "hello world"  # True
+```
+
+### 3.4 文字列のフォーマット
+
+```python
+# format関数を使用
+"{}は{}です".format("これ", "テスト")  # "これはテストです"
+
+# f-string（Python 3.6以降）
+name = "Alice"
+age = 25
+f"{name}は{age}歳です"  # "Aliceは25歳です"
+
+# 数値のフォーマット
+f"{3.14159:.2f}"  # "3.14"（小数点以下2桁）
+f"{42:05d}"       # "00042"（5桁でゼロ埋め）
+```
+
 ## 4. リスト・タプル関連の便利な関数
 
 ### 4.1 zip関数
